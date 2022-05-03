@@ -4,11 +4,14 @@ A repo containing deployment configurations for a microservice based BigQuery co
 
 ## Roadmap:
 - [ ] Terraform setup for provisionning.
-- [ ] BigQuery deployed and seeded as a data warehouse.
-- [ ] Kubernetes Cluster deployed on EKS to host services.
-- [ ] Custom container images for services.
+- [ ] Google Cloud Storage to hold data.
+- [ ] BigQuery as a data warehouse.
+- [ ] Kubernetes Engine to host services.
 
 ## Dependencies:
 |Dependency|Version|
 |---|---|
 |Terraform|v1.1.9|
+
+## Diagram
+![diagram](./diagrams/architecture.png) 
