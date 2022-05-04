@@ -1,4 +1,4 @@
 output "instance" {
   value = google_bigquery_dataset.dataset
-  description = "Contents of the BigQuery dataset"
+  description = "Configurations of the BigQuery dataset."
 }

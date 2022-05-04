@@ -9,26 +9,41 @@ terraform {
 
 provider "google" {
   credentials = file(var.credentials_file)
-  project = var.project
+  project = var.project_id
   region = var.region
 }
 
-module "big-query-module" {
-  source = "./modules/big-query"
-  project_id = "bqconnect-349116"
-  credentials_file = "../../creds/bqconnect-349116-dee41d2a4e8b.json"
-  region = "northamerica-northeast1-a"
+module "bigquery-module" {
+  source = "./modules/bigquery"
+  project_id = var.project_id
+  dataset_id = "bigquery-dataset"
+  friendly_name = "bigquery-dataset"
+  location = "NORTHAMERICA-NORTHEAST1"
+  description = "A BigQuery dataset for north american plants."
 }
 
 module "storage-module" {
   source = "./modules/storage"
+  project_id = var.project_id
+  bucket_name = "bigquery-storage"
+  location = "NORTHAMERICA-NORTHEAST1"
+  name = "plants.data.csv"
+  source_file = "../../data/plants.data.csv"
 }
 
 module "kubernetes-module" {
   source = "./modules/kubernetes"
 }
 
-// Output configured big query module
-output "big-query-data" {
-  value = module.big-query-module.instance
+output "bigquery-module" {
+  value = module.bigquery-module.instance
 }
+
+output "cloud-storage-bucket" {
+  value = module.storage-module.bucket_instance
+}
+
+output "cloud-storage-file" {
+  value = module.storage-module.file_instance
+}
+
