@@ -22,3 +22,9 @@ variable description {
   type = string
   description = "Description of the BigQuery dataset"
 }
+
+variable dependencies {
+  type = any
+  description = "Module dependency array"
+  default = []
+}

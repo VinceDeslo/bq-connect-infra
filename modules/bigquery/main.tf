@@ -6,7 +6,5 @@ resource "google_bigquery_dataset" "dataset" {
   location = var.location
   default_table_expiration_ms = 10800000 // three hours
 
-  depends_on = [
-    google_storage_bucket_object.bigquery_storage_csv
-  ]
+  depends_on = [var.dependencies]
 }
