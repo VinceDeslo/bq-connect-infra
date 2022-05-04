@@ -15,3 +15,9 @@ variable "region" {
   description = "GCP project region"
   default = "northamerica-northeast1-a"
 }
+
+variable "data_file_name" {
+  type = string
+  description = "Name of the data file"
+  default = "plants.data.csv"
+}

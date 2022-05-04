@@ -17,9 +17,13 @@ module "bigquery-module" {
   source = "./modules/bigquery"
   project_id = var.project_id
   dataset_id = "bq_plants_dataset"
-  friendly_name = "bq_plants_dataset"
-  location = "NORTHAMERICA-NORTHEAST1"
-  description = "A BigQuery dataset for north american plants."
+  ds_friendly_name = "bq_plants_dataset"
+  ds_location = "NORTHAMERICA-NORTHEAST1"
+  ds_description = "A BigQuery dataset for north american plants."
+  table_id = "bq_plants_table"
+  tb_friendly_name = "bq_plants_table"
+  tb_data_file_name = var.data_file_name
+  bucket_uri = module.storage-module.bucket_instance.url
   dependencies = [module.storage-module]
 }
 
@@ -28,7 +32,7 @@ module "storage-module" {
   project_id = var.project_id
   bucket_name = "bq_plants_storage"
   location = "NORTHAMERICA-NORTHEAST1"
-  file_name = "plants.data.csv"
+  file_name = var.data_file_name
   source_file = "./data/plants.data.csv"
 }
 
