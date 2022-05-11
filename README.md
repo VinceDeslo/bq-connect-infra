@@ -6,9 +6,9 @@ A repo containing deployment configurations for a microservice based BigQuery co
 [bq-connect](https://github.com/VinceDeslo/bq-connect)
 
 ## Roadmap:
-- [ ] Terraform setup for provisionning.
-- [ ] Google Cloud Storage to hold data.
-- [ ] BigQuery as a data warehouse.
+- [x] Terraform setup for provisionning.
+- [x] Google Cloud Storage to hold data.
+- [x] BigQuery as a data warehouse.
 - [ ] Kubernetes Engine to host services.
 
 ## Dependencies:
