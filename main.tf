@@ -16,12 +16,12 @@ provider "google" {
 module "bigquery-module" {
   source = "./modules/bigquery"
   project_id = var.project_id
-  dataset_id = "bq_plants_dataset"
-  ds_friendly_name = "bq_plants_dataset"
+  dataset_id = "bq_video_games_dataset"
+  ds_friendly_name = "bq_video_games_dataset"
   ds_location = "NORTHAMERICA-NORTHEAST1"
-  ds_description = "A BigQuery dataset for north american plants."
-  table_id = "bq_plants_table"
-  tb_friendly_name = "bq_plants_table"
+  ds_description = "A BigQuery dataset for video game sales."
+  table_id = "bq_video_games_table"
+  tb_friendly_name = "bq_video_games_table"
   tb_data_file_name = var.data_file_name
   bucket_uri = module.storage-module.bucket_instance.url
   dependencies = [module.storage-module]
@@ -30,10 +30,10 @@ module "bigquery-module" {
 module "storage-module" {
   source = "./modules/storage"
   project_id = var.project_id
-  bucket_name = "bq_plants_storage"
+  bucket_name = "bq_video_games_storage"
   location = "NORTHAMERICA-NORTHEAST1"
   file_name = var.data_file_name
-  source_file = "./data/plants.data.csv"
+  source_file = "./data/video_games.csv"
 }
 
 # module "kubernetes-module" {

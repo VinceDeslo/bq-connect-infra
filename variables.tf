@@ -19,5 +19,5 @@ variable "region" {
 variable "data_file_name" {
   type = string
   description = "Name of the data file"
-  default = "plants.data.csv"
+  default = "video_games.csv"
 }
