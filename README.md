@@ -5,10 +5,10 @@ A repo containing deployment configurations for a microservice based BigQuery co
 ### State
 :construction: Project currently a work in progress
 
-# Related Microservice
+### Related Microservice
 [bq-connect](https://github.com/VinceDeslo/bq-connect)
 
-# Related Frontend
+#### Related Frontend
 [bq-connect-frontend](https://github.com/VinceDeslo/bq-connect-frontend)
 
 ## Roadmap:
