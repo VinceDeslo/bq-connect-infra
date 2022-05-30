@@ -16,6 +16,12 @@ variable "region" {
   default = "northamerica-northeast1-a"
 }
 
+variable "location" {
+  type = string
+  description = "GCP project location"
+  default = "northamerica-northeast1"
+}
+
 variable "data_file_name" {
   type = string
   description = "Name of the data file"
