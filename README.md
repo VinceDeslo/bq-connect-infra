@@ -15,6 +15,8 @@ A repo containing IaC configurations for a data lake and microservice connector.
 - [x] Terraform setup for provisionning.
 - [x] Google Cloud Storage to hold CSV files.
 - [x] BigQuery as a data lake.
+- [x] Artifact Repository to host container images of related repos.
+- [ ] Pub/Sub topic for event logging.
 - [ ] Google Kubernetes Engine to host microservices.
 
 ### Diagram
