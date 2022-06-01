@@ -16,6 +16,15 @@ resource "google_service_account" "artifacts-account" {
   display_name = var.account_display
 }
 
+resource "google_service_account_key" "artifacts-account-key" {
+  service_account_id = google_service_account.artifacts-account.name
+}
+
+resource "local_file" "artefacts-account-key" {
+  filename = "${path.module}/../../creds/artefacts-key.json"
+  content = "${base64decode(google_service_account_key.artifacts-account-key.private_key)}"
+}
+
 resource "google_artifact_registry_repository_iam_member" "artifacts-iam" {
   provider = google-beta
 
