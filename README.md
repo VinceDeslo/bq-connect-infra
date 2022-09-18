@@ -2,9 +2,6 @@
 
 A repo containing IaC configurations for a data lake and microservice connector.
 
-### State
-:construction: Project currently a work in progress
-
 ### Related Microservice
 [bq-connect](https://github.com/VinceDeslo/bq-connect)
 
